@@ -9,19 +9,19 @@ import logic.TopsController;
 import logic.VehicleController;
 
 public class PanelStolenVehicles extends javax.swing.JPanel {
-    
+
     final String object = "Vehiculo";
     private final ImageIcon ERRORIMG = new ImageIcon(getClass().getResource("/images/img_error.png"));
     private final ImageIcon DANGERIMG = new ImageIcon(getClass().getResource("/images/img_danger.png"));
     DefaultTableModel modelTable;
-    
+
     /**
      * Creates new form PanelStolenVehicles
      */
     public PanelStolenVehicles() {
         initComponents();
         modelTable = (DefaultTableModel) tableData.getModel();
-        
+
         fillCombobox();
         cleanForm();
         cleanTable();
@@ -239,13 +239,13 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-     private void cleanTable() {
+    private void cleanTable() {
         for (int i = 0; i < tableData.getRowCount(); i++) {
             modelTable.removeRow(i);
             i -= 1;
         }
     }
-    
+
     private void fillTable() {
         cleanTable();
         String[][] data = VehicleController.queryDataTable();
@@ -254,18 +254,18 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
             modelTable.addRow(row);
         }
     }
-    
+
     private void fillCombobox() {
         cbxNeighborhood.removeAllItems();
         cbxModusOperandi.removeAllItems();
         cbxColor.removeAllItems();
-        
+
         String[] neighborhoods = TopsController.getNeighborhoods();
         for (String element : neighborhoods) {
             cbxNeighborhood.addItem(element);
         }
         String[] modusOperandi = TopsController.getModusOperandi();
-        for (int i = 0; i< 3; i++) {
+        for (int i = 0; i < 3; i++) {
             cbxModusOperandi.addItem(modusOperandi[i]);
         }
         String[] colors = VehicleController.getColors();
@@ -273,12 +273,12 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
             cbxColor.addItem(element);
         }
     }
-    
+
     private boolean checkEmptyFields() {
         return txtLicensePlate.getText().isEmpty() || txtBrand.getText().isEmpty()
                 || txtReference.getText().isEmpty();
     }
-    
+
     private void cleanForm() {
         txtLicensePlate.setText("");
         txtBrand.setText("");
@@ -286,15 +286,15 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
         cbxNeighborhood.setSelectedIndex(0);
         cbxColor.setSelectedIndex(0);
     }
-    
+
     private String[] getValuesOfFields() {
-        String[] data = {txtLicensePlate.getText(), txtBrand.getText(), txtReference.getText(), 
+        String[] data = {txtLicensePlate.getText(), txtBrand.getText(), txtReference.getText(),
             cbxNeighborhood.getSelectedItem().toString(), cbxColor.getSelectedItem().toString(),
             cbxModusOperandi.getSelectedItem().toString()};
         return data;
     }
     // ========================================================================
-    
+
     private void updateData() {
         int selectedRow = tableData.getSelectedRow();
         String[] data = getValuesOfFields();
@@ -308,14 +308,14 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
                 VehicleController.updateReport(id, data);
                 TopsController.deleteReportCount(neighborhood, object, modusOperandi);
                 TopsController.addReportCount(data[3], object, data[5]);
-                
+
                 System.out.println(Arrays.toString(data));
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el reporte a modificar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
             }
         }
     }
-    
+
     private void btnNewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewReportActionPerformed
         if (checkEmptyFields()) {
             JOptionPane.showMessageDialog(null, "Por favor, rellene todos los campos del formulario.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
@@ -324,9 +324,9 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
 
         String[] data = getValuesOfFields();
         VehicleController.addReport(data);
-        
+
         System.out.println(Arrays.toString(data));
-        
+
         TopsController.addReportCount(data[3], object, data[5]);
         cleanForm();
         fillTable();

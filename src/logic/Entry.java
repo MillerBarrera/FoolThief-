@@ -1,25 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
 public class Entry {
+
     int key;
-    Vehicles value;
+    StolenCar value;
     Entry next;
-    public Entry(int key,Vehicles value){
+
+    public Entry(int key, StolenCar value) {
         this.key = key;
         this.value = value;
         next = null;
     }
-    public Entry(){
+
+    public Entry() {
         next = null;
     }
-    public int GetKey(){
+
+    public int GetKey() {
         return key;
     }
-    public Vehicles GetValue(){
+
+    public StolenCar GetValue() {
         return value;
     }
 }

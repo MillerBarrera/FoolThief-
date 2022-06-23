@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
 public class HashTableArray<T> {
@@ -21,7 +17,7 @@ public class HashTableArray<T> {
         return key % size;
     }
 
-    public void put(int key, Vehicles value) {
+    public void put(int key, StolenCar value) {
         int HashIndex = GetHash(key);
         Entry ArrayValue = arrayHash[HashIndex];
         Entry newItem = new Entry(key, value);
@@ -36,14 +32,12 @@ public class HashTableArray<T> {
         while (ArrayValue != null) {
             if (ArrayValue.GetKey() == key) {
                 value = (T) ArrayValue.GetValue();
-            
-            break;
-        }
-        ArrayValue = ArrayValue.next;
-    }
-        return value;
-        
-    
 
-}
+                break;
+            }
+            ArrayValue = ArrayValue.next;
+        }
+        return value;
+
+    }
 }
