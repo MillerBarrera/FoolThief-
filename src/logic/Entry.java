@@ -3,10 +3,10 @@ package logic;
 public class Entry {
 
     int key;
-    StolenCar value;
+    StolenVehicle value;
     Entry next;
 
-    public Entry(int key, StolenCar value) {
+    public Entry(int key, StolenVehicle value) {
         this.key = key;
         this.value = value;
         next = null;
@@ -20,7 +20,7 @@ public class Entry {
         return key;
     }
 
-    public StolenCar GetValue() {
+    public StolenVehicle GetValue() {
         return value;
     }
 }

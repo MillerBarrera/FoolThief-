@@ -1,8 +1,8 @@
 package logic;
 
-public class StolenCar {
+public class StolenVehicle {
 
-    public StolenCar(String placa, String marca, String referencia, String color, String localidad, String modus) {
+    public StolenVehicle(String placa, String marca, String referencia, String color, String localidad, String modus) {
         this.placa = placa;
         this.marca = marca;
         this.referencia = referencia;
