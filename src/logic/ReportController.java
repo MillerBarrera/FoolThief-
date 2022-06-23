@@ -50,7 +50,7 @@ public class ReportController {
      * <li>false: no existe el elemento en la lista.</li>
      * </ul>
      */
-    public static boolean isOnTheList(String id) {
+    public static boolean exist(String id) {
         int idInt = Integer.parseInt(id);
         int index = browseReport(idInt);
         return index != -1;
