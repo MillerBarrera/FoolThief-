@@ -78,9 +78,9 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="cbxModusOperandi" pref="196" max="32767" attributes="0"/>
-                                  <Component id="txtHour" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cbxModusOperandi" max="32767" attributes="0"/>
                                   <Component id="dtchDate" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="txtHour" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="txtBoxDescription" alignment="0" min="-2" pref="304" max="-2" attributes="0"/>
@@ -437,12 +437,7 @@
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="dtchDate">
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="txtHour">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format subtype="1" type="2"/>
-        </Property>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="txtHour">
     </Component>
   </SubComponents>
 </Form>

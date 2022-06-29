@@ -60,7 +60,7 @@ public class PanelReports extends javax.swing.JPanel {
         btnSearch = new javax.swing.JButton();
         cbxModusOperandi = new javax.swing.JComboBox<>();
         dtchDate = new com.toedter.calendar.JDateChooser();
-        txtHour = new javax.swing.JFormattedTextField();
+        txtHour = new javax.swing.JTextField();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(780, 600));
@@ -184,8 +184,6 @@ public class PanelReports extends javax.swing.JPanel {
 
         cbxModusOperandi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        txtHour.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -231,9 +229,9 @@ public class PanelReports extends javax.swing.JPanel {
                                     .addComponent(lblDate))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(cbxModusOperandi, 0, 196, Short.MAX_VALUE)
-                                    .addComponent(txtHour, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dtchDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(cbxModusOperandi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(dtchDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtHour, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(txtBoxDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1))
                 .addGap(45, 45, 45))
@@ -487,7 +485,7 @@ public class PanelReports extends javax.swing.JPanel {
     private javax.swing.JScrollPane txtBoxDescription;
     private javax.swing.JScrollPane txtBoxPlace;
     private javax.swing.JTextArea txtDescription;
-    private javax.swing.JFormattedTextField txtHour;
+    private javax.swing.JTextField txtHour;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextArea txtPlace;
     // End of variables declaration//GEN-END:variables
