@@ -2,44 +2,35 @@ package logic;
 
 public class StolenVehicle {
 
-    public StolenVehicle(String placa, String marca, String referencia, String color, String localidad, String modus) {
-        this.placa = placa;
-        this.marca = marca;
-        this.referencia = referencia;
-        this.color = color;
-        this.localidad = localidad;
-        this.modus = modus;
-    }
-
-    private String placa;
-    private String marca;
-    private String referencia;
+    private String licensePlate;
+    private String brand;
+    private String reference;
+    private String neighborhood;
     private String color;
-    private String localidad;
-    private String modus;
+    private String modusOperandi;
 
-    public String getPlaca() {
-        return placa;
+    public String getLicensePlate() {
+        return licensePlate;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getReferencia() {
-        return referencia;
+    public String getReference() {
+        return reference;
     }
 
-    public void setReferencia(String referencia) {
-        this.referencia = referencia;
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 
     public String getColor() {
@@ -50,19 +41,39 @@ public class StolenVehicle {
         this.color = color;
     }
 
-    public String getLocalidad() {
-        return localidad;
+    public String getNeighborhood() {
+        return neighborhood;
     }
 
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
     }
 
-    public String getModus() {
-        return modus;
+    public String getModusOperandi() {
+        return modusOperandi;
     }
 
-    public void setModus(String modus) {
-        this.modus = modus;
+    public void setModusOperandi(String modusOperandi) {
+        this.modusOperandi = modusOperandi;
+    }
+
+    public String[] getAllData() {
+        String[] data = new String[6];
+        data[0] = licensePlate;
+        data[1] = brand;
+        data[2] = reference;
+        data[3] = neighborhood;
+        data[4] = color;
+        data[5] = modusOperandi;
+        return data;
+    }
+
+    public void setAllData(String[] data) {
+        licensePlate = data[0];
+        brand = data[1];
+        reference = data[2];
+        neighborhood = data[3];
+        color = data[4];
+        modusOperandi = data[5];
     }
 }

@@ -69,7 +69,7 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Placa", "Marca", "Referencia", "Color", "Localidad", "Modus"
+                "ID", "Placa", "Marca", "Referencia", "Localidad", "Color", "Modus"
             }
         ) {
             Class[] types = new Class [] {
@@ -251,7 +251,9 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
         String[][] data = VehicleController.queryDataTable();
         modelTable.setRowCount(0);
         for (String[] row : data) {
-            modelTable.addRow(row);
+            if (row[0] != null) {
+                modelTable.addRow(row);
+            }
         }
     }
 
@@ -308,8 +310,6 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
                 VehicleController.updateReport(id, data);
                 TopsController.deleteReportCount(neighborhood, object, modusOperandi);
                 TopsController.addReportCount(data[3], object, data[5]);
-
-                System.out.println(Arrays.toString(data));
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el reporte a modificar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
             }
@@ -323,10 +323,8 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
         }
 
         String[] data = getValuesOfFields();
+        
         VehicleController.addReport(data);
-
-        System.out.println(Arrays.toString(data));
-
         TopsController.addReportCount(data[3], object, data[5]);
         cleanForm();
         fillTable();
@@ -346,14 +344,16 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String id = JOptionPane.showInputDialog(null, "Inserte el ID del reporte: ", "Reportes", JOptionPane.QUESTION_MESSAGE);
         try {
-            if (VehicleController.existReportById(id) == false) {
+            if (VehicleController.exist(id) == false) {
                 JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
                 return;
             }
             String[] data = VehicleController.queryReportById(id);
-
-            // Colocar ventana para mostrar datos
-            System.out.println(id);
+            String message = "ID: " + data[0] + "\n" + "Placa: " + data[1] + "\n" 
+                    + "Marca: " + data[2] + "\n" + "Referencia" + data[3] + "\n"
+                    + "Localidad: " + data[4] + "\n" + "Color: " + data[5] + "\n"
+                    + "Modus Operandi: " + data[6];
+            JOptionPane.showMessageDialog(null, message, "Reporte de vehiculos", JOptionPane.PLAIN_MESSAGE);
         } catch (NumberFormatException e) {
 
         }

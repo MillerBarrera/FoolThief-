@@ -169,8 +169,8 @@
                 <Column editable="false" title="Placa" type="java.lang.String"/>
                 <Column editable="false" title="Marca" type="java.lang.String"/>
                 <Column editable="false" title="Referencia" type="java.lang.String"/>
-                <Column editable="false" title="Color" type="java.lang.String"/>
                 <Column editable="false" title="Localidad" type="java.lang.String"/>
+                <Column editable="false" title="Color" type="java.lang.String"/>
                 <Column editable="false" title="Modus" type="java.lang.String"/>
               </Table>
             </Property>
