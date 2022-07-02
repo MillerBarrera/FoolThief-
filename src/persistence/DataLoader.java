@@ -1,19 +1,19 @@
 package persistence;
 
-import logic.ReportController;
 import logic.TopsController;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import logic.VehicleController;
 
 public class DataLoader {
 
-    String pathFile = "C:\\Users\\Usuario\\Documents\\Netbeans Projects\\FoolThief\\FoolThief.v2\\src\\persistence\\Pruebas100Coma.txt";
+    String pathFile = "C:\\Users\\Usuario\\Documents\\Netbeans Projects\\FoolThief\\src\\persistence\\100000vehiculos.txt";
 
     public static String[] string;
     public static String[] lines;
-    public static String newName, newDate, newHour, newObject, newPlace, newNeighborhood, newDescription, newModusOperandi;
+    public static String newLicensePlate, newBrand, newReference, newLocalidad, newColor, newModusOperandi;
     public static String text = "";
     public static int u = 0;
     public static int d = 8;
@@ -36,55 +36,43 @@ public class DataLoader {
             
         }
 
-        for (int i = 0; i < 800; i++) {
+        for (int i = 0; i < 900000; i++) {
             lines = text.split(",");
             if (lines == null) {
                 break;
             }
         }
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 80000; i++) {
 
             y++;
 
             for (int c = w; c < y; c++) {
-                newName = lines[c];
+                newLicensePlate = lines[c];
 
             }
             y++;
             w++;
             for (int c = w; c < y; c++) {
-                newDate = lines[c];
+                newBrand = lines[c];
 
             }
             y++;
             w++;
             for (int c = w; c < y; c++) {
-                newHour = lines[c];
+                newReference = lines[c];
 
             }
             y++;
             w++;
             for (int c = w; c < y; c++) {
-                newObject = lines[c];
+                newLocalidad = lines[c];
 
             }
             y++;
             w++;
             for (int c = w; c < y; c++) {
-                newPlace = lines[c];
-
-            }
-            y++;
-            w++;
-            for (int c = w; c < y; c++) {
-                newNeighborhood = lines[c];
-
-            }
-            y++;
-            w++;
-            for (int c = w; c < y; c++) {
-                newDescription = lines[c];
+                newColor = lines[c];
 
             }
 
@@ -97,18 +85,17 @@ public class DataLoader {
             
             System.out.println(w+"l"+y);
             
-            String[] data = new String[9];
-            data[0] = newName;
-            data[1] = newDate;
-            data[2] = newHour;
-            data[3] = newNeighborhood;
-            data[4] = newObject;
+            String[] data = new String[6];
+            data[0] = newLicensePlate;
+            data[1] = newBrand;
+            data[2] = newReference;
+            data[3] = newLocalidad;
+            data[4] = newColor;
             data[5] = newModusOperandi;
-            data[6] = newPlace;
-            data[7] = newDescription;
+            
 
-            ReportController.addReport(data);
-            TopsController.addReportCount(newNeighborhood, newObject, newModusOperandi);
+            VehicleController.addReport(data);
+            TopsController.addReportCount(newLocalidad, "Vehiculo", newModusOperandi);
             u++;
         }
     }

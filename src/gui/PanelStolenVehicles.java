@@ -24,8 +24,7 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
 
         fillCombobox();
         cleanForm();
-        cleanTable();
-        txtLicensePlate.requestFocus();
+        fillTable();
     }
 
     /**

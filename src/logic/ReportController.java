@@ -2,7 +2,7 @@ package logic;
 
 /**
  * Esta clase se encarga de ser intermediario entre la capa de interfaz y la
- * capa de persistencia.
+ * capa de persistencia respecto a reportes en general.
  */
 public class ReportController {
 

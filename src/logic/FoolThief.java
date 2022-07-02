@@ -1,7 +1,6 @@
 package logic;
 
 import gui.MainWindow;
-// import persistence.FilePersistence;
 
 public class FoolThief {
 
