@@ -29,11 +29,11 @@ public class DataLoader {
             while ((bfRead = obj.readLine()) != null) {
                 temp = temp + bfRead;
             }
-            
+
             text = temp;
             System.out.println(text);
         } catch (Exception e) {
-            
+
         }
 
         for (int i = 0; i < 900000; i++) {
@@ -82,9 +82,9 @@ public class DataLoader {
                 newModusOperandi = lines[c];
 
             }
-            
-            System.out.println(w+"l"+y);
-            
+
+            System.out.println(w + "l" + y);
+
             String[] data = new String[6];
             data[0] = newLicensePlate;
             data[1] = newBrand;
@@ -92,7 +92,6 @@ public class DataLoader {
             data[3] = newLocalidad;
             data[4] = newColor;
             data[5] = newModusOperandi;
-            
 
             VehicleController.addReport(data);
             TopsController.addReportCount(newLocalidad, "Vehiculo", newModusOperandi);

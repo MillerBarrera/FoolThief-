@@ -230,7 +230,6 @@ public class PanelHome extends javax.swing.JPanel {
         fillTop(invData, "Objetos más robados");
     }//GEN-LAST:event_btnObjectsActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bogotaMap;
     private javax.swing.JButton btnModusOperandi;

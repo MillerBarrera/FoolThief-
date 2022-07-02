@@ -15,7 +15,7 @@ public class VehicleController {
     public static String[] getColors() {
         return colors;
     }
-    
+
     /**
      * Busca el id y retorna si esta en la Tabla Hash.
      *
@@ -29,10 +29,10 @@ public class VehicleController {
         Integer idInt = Integer.parseInt(id);
         return hashTable.containsKey(idInt);
     }
-    
+
     /**
-     * Recibe un arreglo con los datos y agrega un objeto que los contiene
-     * en la Tabla Hash.
+     * Recibe un arreglo con los datos y agrega un objeto que los contiene en la
+     * Tabla Hash.
      *
      * @param data
      */
@@ -42,9 +42,10 @@ public class VehicleController {
         stolenVehicle.setAllData(data);
         hashTable.put(id, stolenVehicle);
     }
-    
+
     /**
-     * Esta función retorna un matriz con todos los datos guardados en la Tabla Hash.
+     * Esta función retorna un matriz con todos los datos guardados en la Tabla
+     * Hash.
      *
      * @return String[][] matriz con todos los datos guardados en la hash table.
      */
@@ -68,9 +69,9 @@ public class VehicleController {
             return data;
         }
     }
-    
+
     /**
-     * Retorna un arreglo con los datos guardados en la Tabla Hash para su 
+     * Retorna un arreglo con los datos guardados en la Tabla Hash para su
      * lectura en la interfaz.
      *
      * @param id
@@ -88,7 +89,7 @@ public class VehicleController {
 
         return data;
     }
-    
+
     /**
      * Dado un ID y un arreglo se busca el elemento y se actualiza los datos
      * tanto en la Tabla Hash.
@@ -102,7 +103,7 @@ public class VehicleController {
         stolenVehicle.setAllData(data);
         hashTable.replace(idInt, stolenVehicle);
     }
-    
+
     /**
      * Dado un ID elimina en la Tabla Hash.
      *

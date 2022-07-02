@@ -322,7 +322,7 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
         }
 
         String[] data = getValuesOfFields();
-        
+
         VehicleController.addReport(data);
         TopsController.addReportCount(data[3], object, data[5]);
         cleanForm();
@@ -348,7 +348,7 @@ public class PanelStolenVehicles extends javax.swing.JPanel {
                 return;
             }
             String[] data = VehicleController.queryReportById(id);
-            String message = "ID: " + data[0] + "\n" + "Placa: " + data[1] + "\n" 
+            String message = "ID: " + data[0] + "\n" + "Placa: " + data[1] + "\n"
                     + "Marca: " + data[2] + "\n" + "Referencia" + data[3] + "\n"
                     + "Localidad: " + data[4] + "\n" + "Color: " + data[5] + "\n"
                     + "Modus Operandi: " + data[6];
